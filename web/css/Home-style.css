@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+/*.logo {*/
+    /*/!*list-style:none;*!/*/
+    /*height:180px;*/
+    /*position:absolute;*/
+    /*right:0;*/
+    /*top:0;*/
+    /*z-index: 20;*/
+/*}*/
+
+/*.li-img {*/
+    /*margin-left:-500px;*/
+    /*margin-top:30px;*/
+    /*position: fixed;*/
+/*}*/
+
+#menuContainer {
+    list-style:none;
+    width:799px;
+    height:180px;
+    position:absolute;
+    right:0;
+    top:0;
+    background-color: rgba(000, 000, 000, 0);
+    z-index: 20;
+}
+
+#menu {
+    list-style:none;
+    width:799px;
+    height:180px;
+    background-color: rgba(000, 000, 000, 0);
+    position: fixed;
+}
+
+#menu li {
+    float:left;
+    margin-top:50px;
+    width:114px;
+    height:50px;
+    position: relative;
+    background-color: rgba(000, 000, 000, 0.5);
+}
+
+#menu li.first {
+    border-top-left-radius:20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgba(000, 000, 000, 0.9);
+}
+
+#menu li#login {
+    background-color: rgba(000, 000, 000, 0.7);
+}
+
+#menu li.first a {
+    color: #33CCFF;
+    font-size: 18px;
+}
+
+#menu li#none {
+    border-right: 1px solid #FFF;
+}
+
+#menu li a {
+    display:block;
+    width:113px;
+    height:50px;
+    text-decoration:none;
+    color: #FFF;
+    font-family:verdana, sans-serif; font-size:15px;
+}
+
+#menu li a b {
+    display:block;
+    width:113px;
+    height:50px;
+    line-height:48px;
+    text-transform:lowercase;
+    text-align:center;
+}
+
+#menu li.first a:hover {
+    border-top-left-radius:20px;
+    border-bottom-left-radius: 20px;
+    background-color: rgba(000, 000, 000, 0.7);
+}
+
+#menu li#none a:hover {
+    background-color: rgba(000, 000, 000, 0);
+}
+
+#menu li a:hover {
+    background-color: rgba(000, 000, 000, 0.3);
+}
+
+#menu li a:active {
+    color: #33CCFF;
+}
+/*menu end*/
+
+/*model start*/
+#loginmodal {
+    border-radius: 5px;
+    width:330px;
+    height:410px;
+    position: absolute;
+    background: #f7f7f7;
+    background: -webkit-linear-gradient(top left,#FFF 0%,#999999 100%);
+    background: linear-gradient(to bottom right,#FFF 0%,#999999 100%);
+    /*background: #999999;*/
+}
+
+#loginmodal h1 {
+    text-align: center;
+    color: #33CCFF;
+    /*color: #000;*/
+}
+
+.form-container {
+    max-width: 250px;
+    margin: 0 auto;
+    padding: 20px 0;
+    height: 400px;
+    text-align: center;
+}
+
+.form-container h1.h3 {
+    font-size: 40px;
+    font-weight: 200;
+}
+
+form {
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+form >input {
+    outline: 0;
+    border: 1px solid rgba(000, 000, 000, 0.4);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 220px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    color: #5a5a5a;
+    font-weight: 300;
+}
+
+form input:hover,
+form input:focus {
+    background-color: aliceblue;
+    box-shadow:0 0 4px lightblue;
+}
+
+.identifying {
+    border: 1px solid rgba(000, 000, 000, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 130px;
+    border-radius: 3px;
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+    font-weight: 300;
+}
+
+.rememberMe {
+    position: absolute;
+    margin: 10px auto 10px 15px;
+}
+
+.rememberMe label {
+    color: #5a5a5a;
+    font-weight: 400;
+}
+
+form button {
+    outline: 0;
+    background-color: #5bc0de;
+    /*background-color: #000;*/
+    border: 0;
+    margin-top: 40px;
+    padding: 10px 15px;
+    color: #FFF;
+    border-radius: 3px;
+    width: 220px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+form button:hover,
+form button:focus {
+    background-color: #269abc;
+    box-shadow: 0 0 4px lightblue;
+}
+
+
+.login-links {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.login-links a{
+     color: #5a5a5a;
+     text-decoration: none;
+     padding: 30px;
+}
+
+.login-links a:hover{
+    color: #269abc;
+    text-decoration: none;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    background: #222;
+    display: none;
+}
+/*model end*/
+
+/*carousel start*/
+.carousel {
+    height: 500px;
+    background-color: #5A5A5A;
+}
+
+.carousel .item {
+    height: 500px;
+}
+
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+}
+
+.carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-top: 250px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.carousel-caption p,h1 {
+    margin-bottom: 20px;
+    line-height: 1.4;
+    color: #cccccc;
+}
+
+p{
+    margin: 0 0 10px;
+    font-size: 21px;
+}
+
+.carousel-caption button {
+    border-radius: 10px;
+    border: none;
+    width: 120px;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: #33CCFF;
+}
+
+.carousel-caption a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.carousel-foot {
+    width: 100%;
+    height: 50px;
+    background-color: #33CCFF;
+    box-shadow: 0 4px 6px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.carousel-foot p {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+/*carousel end*/
+
+#back-to-top {
+    right: 10px;
+    bottom: 10px;
+    z-index: 30;
+    position: fixed;
+}
+
+#back-to-top img {
+    padding: 5px;
+    width: 55px;
+    height: 60px;
+}
+
+/*marketing start*/
+.marketing .col-lg-4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.marketing h2 {
+    font-weight: normal;
+}
+.marketing .col-lg-4 p {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.img-circle {
+    width: 140px;
+    height: 140px;
+}
+
+.row h2 {
+    color: #33CCFF;
+}
+
+.row p {
+    color: #5a5a5a;
+}
+
+.col-lg-4 {
+    width: 33.3333%;
+}
+
+.img-left {
+    width: 400px;
+    height: 300px;
+    float: left;
+}
+/*marketing end*/
+
+/*featurette start*/
+.lead {
+    color: #5a5a5a;
+}
+
+.img-right {
+    width:400px;
+    height: 300px;
+    float: right;
+}
+
+/*footer start*/
+.footer {
+    background-color: #5a5a5a;
+    width: 100%;
+    height: 80px;
+}
+
+
+

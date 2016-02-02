@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>毕业论文规范设计-注册</title>
+    <link rel="stylesheet" type="text/css" href="css/Register-style.css">
+</head>
+<body>
+<div class="register">
+    <div class="form-container">
+        <div class="head">
+            <h1>创建用户</h1>
+            <p class="note">带 <span class="required">*</span>为必填</p>
+        </div>
+        <div class="create-user">
+            <div class="form-1">
+                <form id="user-form-1" action="" method="post">
+                    <div class="row">
+                        <label for="User_username" class="required">用户名<span class="required">*</span></label>
+                        <input size="30" maxlength="30" name="User[username]" id="User_username" type="text" placeholder="请输入4-16位英文字母或数字"/>
+                    </div>
+                    <div class="row">
+                        <label for="User_password" class="required">密码<span class="required">*</span></label>
+                        <input size="30" maxlength="255" name="User[password]" id="User_password" type="password" placeholder="请输入6-16位密码"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="User_repeatPassword" class="required">确认密码<span class="required">*</span></label>
+                        <input size="30" maxlength="30" name="User[repeatPassword]" id="User_repeatPassword" type="password" placeholder="确认密码"/>
+                    </div>
+                    <div class="row">
+                        <label for="User_role" class="required">角色<span class="required">*</span></label>
+                        <select name="User[role]" id="User_role">
+                            <option>————请选择————</option>
+                            <option value="2">学生</option>
+                            <option value="1">教师</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label for="User_email" class="required">邮箱<span class="required">*</span></label>
+                        <input size="30" maxlength="30" name="User[email]" id="User_email" type="text" placeholder="请输入常用邮箱"/>
+                    </div>
+                </form>
+            </div>
+            <div class="form-2">
+                <form id="user-form-2" action="" method="post">
+                    <div class="row">
+                        <label for="User_realName">真实姓名</label>
+                        <input name="User[realName]" id="User_realName" type="text" maxlength="20" />
+                    </div>
+                    <div class="row">
+                        <label for="User_studentId">学号</label>
+                        <input size="30" maxlength="30" name="User[studentId]" id="User_studentId" type="text" />
+                    </div>
+                    <div class="row">
+                        <label for="User_studentProfessional">学生专业</label>
+                        <input size="30" maxlength="30" name="User[studentProfessional]" id="User_studentProfessional" type="text" />
+                    </div>
+                    <div class="row">
+                        <label for="User_studentAcademy">学院</label>
+                        <input size="30" maxlength="60" name="User[studentAcademy]" id="User_studentAcademy" type="text" />
+                    </div>
+                    <div class="row">
+                        <label for="User_teacherWorkAddress">教师工作地址</label>
+                        <input size="30" maxlength="60" name="User[teacherWorkAddress]" id="User_teacherWorkAddress" type="text" />
+                    </div>
+
+                    <div class="row">
+                        <label for="User_teacherProfessionalTitle">教师职称</label>
+                        <input size="30" maxlength="60" name="User[teacherProfessionalTitle]" id="User_teacherProfessionalTitle" type="text" />
+                    </div>
+                </form>
+            </div>
+            <div class="row-buttons">
+                <input type="submit" name="yt0" value="创建" />
+            </div>
+            <div class="row-text">
+                <p>已有账号？<a href="#" id="modaltrigger">点击登录</a></p>
+            </div>
+        </div>
+    </div>
+    <ul class="bg-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
