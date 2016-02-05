@@ -94,7 +94,7 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface {
      * @param  string  $password password to validate
      * @return boolean if password provided is valid for current user
      */
-    public function validatePassword($password) {
-        return $this->password === $password;
+      public function validatePassword($password) {
+        return $this->password === md5($password);
     }
 }

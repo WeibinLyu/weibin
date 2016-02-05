@@ -1,91 +1,46 @@
-<!DOCTYPE html>
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-
-//$this->title = 'Login';
-//$this->params['breadcrumbs'][] = $this->title;
+use app\assets\AppAsset;
 ?>
+<!DOCTYPE html>
 
+<body>
 <html lang="en">
 <head>
+    <?= Html::csrfMetaTags() ?> <!--这个和最下面的 yii，js 是注销(post)要用的-->
     <meta charset="UTF-8">
     <title>毕业论文规范设计</title>
     <link rel="stylesheet" type="text/css" href="css/Home-style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script src="/assets/a5ef1b45/yii.js"></script>
-    <script>
-    (function () {
-        var ajax = function (url, settings) {
-            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            settings = settings || {};
-            xhr.open(settings.method || 'GET', url, true);
-            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            xhr.setRequestHeader('Accept', 'text/html');
-            xhr.onreadystatechange = function (state) {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200 && settings.success) {
-                        settings.success(xhr);
-                    } else if (xhr.status != 200 && settings.error) {
-                        settings.error(xhr);
-                    }
-                }
-            };
-            xhr.send(settings.data || '');
-        };
-
-        var e = document.getElementById('yii-debug-toolbar');
-        if (e) {
-            e.style.display = 'block';
-            var url = e.getAttribute('data-url');
-            ajax(url, {
-                success: function (xhr) {
-                    var div = document.createElement('div');
-                    div.innerHTML = xhr.responseText;
-                    e.parentNode.replaceChild(div, e);
-                    if (window.localStorage) {
-                        var pref = localStorage.getItem('yii-debug-toolbar');
-                        if (pref == 'minimized') {
-                            document.getElementById('yii-debug-toolbar').style.display = 'none';
-                            document.getElementById('yii-debug-toolbar-min').style.display = 'block';
-                        }
-                    }
-                },
-                error: function (xhr) {
-                    e.innerHTML = xhr.responseText;
-                }
-            });
-        }
-    })();
-    </script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 </head>
 <body>
-    <!--<div class="logo">-->
-        <!--<ul class="li-img">-->
-            <!--<li><img src="images/大创LOGO.png"></li>-->
-        <!--</ul>-->
-    <!--</div>-->
     <div id="menuContainer">
         <ul id="menu">
-            <li id="home" class="first"><a href=""><b>首页</b></a></li>
-            <li id="function"><a href="#"><b>功能菜单</b></a></li>
-            <li id="create"><a href="#"><b>表格创建</b></a></li>
-            <li id="help"><a href="#"><b>帮助</b></a></li>
+            <li id="home" class="first"><a href="<?= Yii::$app->homeUrl ?>"><b>首页</b></a></li>
+            <li id="function"><a href="<?= Yii::$app->homeUrl ?>index.php?r=assignment-book/view&id=1"><b>我的毕设</b></a></li>
+            <li id="create"><a href="<?= Yii::$app->homeUrl ?>index.php?r=site/login"><b>登录页面</b></a></li>
+            <li id="help"><a href=""><b>帮助</b></a></li>
             <li id="none"><a><b></b></a></li>
             <li id="login">
-                <!--<a href="#loginmodal" class="flatbtn" id="modaltrigger"><b>登录</b></a>-->
                 <?=Yii::$app->user->isGuest ?
                 '<a href="#loginmodal" class="flatbtn" id="modaltrigger"><b>登录</b></a>' :
-                '<a href="#"><b>' . Yii::$app->user->identity->username . '</b></a>'
+                '<a href="'.Yii::$app->homeUrl.'index.php?r=users/view&id='.Yii::$app->user->identity->id.'"><b>'.Yii::$app->user->identity->username.'</b></a>'
                 ?>
             </li>
             <li id="register" class="last">
-                <!--<a href="Reg-index.html" target="_blank"><b>注册</b></a>-->
                 <?=Yii::$app->user->isGuest ?
-                '<a href="Reg-index.html" target="_blank"><b>注册</b></a>' :
-                '<a href="/index.php?r=site%2Flogout" data-method="post"><b>注销</b></a>'
+                Html::a('<b>注册</b>', 
+                        ['users/create'], 
+                        ['data-method' => 'post']) :
+                Html::a('<b>退出</b>', 
+                        ['site/logout'], 
+                        ['data-method' => 'post'])
                 ?>
             </li>
         </ul>
@@ -233,9 +188,8 @@ use yii\bootstrap\ActiveForm;
         <hr class="featurette-divider">
     </div>
     <div class="footer"></div>
-
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery.leanModal.min.js"></script>
+    <script src="assets/fbcd00b1/yii.js"></script>
+    <!--yii.js 是注销要用的-->
 </body>
 </html>
+<?php $this->endPage() ?>

@@ -217,9 +217,11 @@ form button:focus {
 }
 
 .login-links a{
-     color: #5a5a5a;
-     text-decoration: none;
-     padding: 30px;
+    color: #5a5a5a;
+    text-decoration: none;
+    //padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .login-links a:hover{
@@ -350,7 +352,9 @@ p{
 }
 
 .col-lg-4 {
-    width: 33.3333%;
+    //width: 33.3333%;
+    width: 390px;
+    margin: auto;
 }
 
 .img-left {

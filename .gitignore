@@ -1,0 +1,35 @@
+# if .gitignore not work, try it follow:
+# git rm -r --cached .
+# git add .
+# commit -m ".gitignore fixed"
+
+# list the ignore file:
+# git ls-files --others -i --exclude-standard
+
+# latex temp file
+*.log
+*.aux
+*.xdv
+*.pdf
+
+# vim sweap file
+*.swp
+*.swo
+
+# gedit temp file
+*~
+
+# yii temp file
+formatPaper/assets/*
+
+# netbeans project fill
+nbproject/*
+
+# yii database user psw config
+formatPaper/protected/config/database.php
+
+# generate pdf user file
+documents/*
+!documents/guet.jpg
+!documents/template
+/formatPaper/yii-1.1.16/demos/

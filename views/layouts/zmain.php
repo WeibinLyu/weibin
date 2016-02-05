@@ -22,17 +22,15 @@
     <body>
         <div id="menuContainer">
             <ul id="menu" style="width:850px;">
-                <li id="home" class="first"><a href="/DocAuto2/formatPaper/index.php?r=site/index"><b>首页</b></a></li>
-                <li id="function"><a href="?r=subject"><b>项目</b></a></li>
-                <li id="create"><a href="?r=user/view&id=<?php echo yii::app()->user->getId() ?>"><b>待改</b></a></li>
-                <li id="help"><a href="/DocAuto2/formatPaper/index.php?r=assignmentBook/view&id=1""><b>任务书</b></a></li>
+                <li id="home" class="first"><a href="http://localhost/latex/web/"><b>首页</b></a></li>
+                <li id="function"><a href=""><b>毕业进度</b></a></li>
+                <li id="create"><a href=""><b>我的论文</b></a></li>
+                <li id="help"><a href=""><b>帮助</b></a></li>
                 <li id="none"><a><b></b></a></li>
-                <!--<li id="login"><a href="/DocAuto2/formatPaper/index.php?r=site/logout" class="flatbtn" id="modaltrigger"><b><?php echo '注销' //. Yii::app()->user->name . ')'?></b></a></li>
-                <li id="create"><a href="?r=user/view&id=<?php echo yii::app()->user->getId() ?>"><b>我的账号</b></a></li>-->
                 <li id="login">
                     <?=Yii::$app->user->isGuest ?
                     '<a href="#loginmodal" class="flatbtn" id="modaltrigger"><b>登录</b></a>' :
-                    '<a href="#"><b>' . Yii::$app->user->identity->username . '</b></a>'
+                    '<a href="'.Yii::$app->homeUrl.'index.php?r=users/view&id='.Yii::$app->user->identity->id.'"><b>'.Yii::$app->user->identity->username.'</b></a>'
                     ?>
                 </li>
                 <li id="register" class="last">

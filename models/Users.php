@@ -48,20 +48,36 @@ class Users extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
     public function attributeLabels()
     {
-        return [
-            'id' => Yii::t('app/config/section', 'ID'),
-            'username' => Yii::t('app/config/section', 'Username'),
-            'password' => Yii::t('app/config/section', 'Password'),
-            'realName' => Yii::t('app/config/section', 'Real Name'),
-            'role' => Yii::t('app/config/section', 'Role'),
-            'email' => Yii::t('app/config/section', 'Email'),
-            'studentId' => Yii::t('app/config/section', 'Student ID'),
-            'studentProfessional' => Yii::t('app/config/section', 'Student Professional'),
-            'studentAcademy' => Yii::t('app/config/section', 'Student Academy'),
-            'teacherWorkAddress' => Yii::t('app/config/section', 'Teacher Work Address'),
-            'teacherProfessionalTitle' => Yii::t('app/config/section', 'Teacher Professional Title'),
-        ];
+        return array(
+            'id' => 'ID',
+            'username' => '用户名',
+            'password' => '密码',
+            'oldPassword' => '旧密码',
+            'repeatPassword' => '确认密码',
+            'realName' => '真实姓名',
+            'role' => '角色',
+            'email' => 'Email',
+            'studentId' => '学号',
+            'studentProfessional' => '专业',
+            'studentAcademy' => '学院',
+            'teacherWorkAddress' => '教师办公室',
+            'teacherProfessionalTitle' => '教师职称',
+        );
+    }
+    
+    public function beforeSave($insert) 
+    {
+        if (parent::beforeSave($insert))
+        {
+            $this->password = md5($this->password);
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
     }
 }
