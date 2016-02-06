@@ -23,7 +23,7 @@ use app\assets\AppAsset;
     <div id="menuContainer">
         <ul id="menu">
             <li id="home" class="first"><a href="<?= Yii::$app->homeUrl ?>"><b>首页</b></a></li>
-            <li id="function"><a href="<?= Yii::$app->homeUrl ?>index.php?r=assignment-book/view&id=1"><b>我的毕设</b></a></li>
+            <li id="function"><a href="<?= Yii::$app->homeUrl ?>index.php?r=site/myproject"><b>我的毕设</b></a></li>
             <li id="create"><a href="<?= Yii::$app->homeUrl ?>index.php?r=site/login"><b>登录页面</b></a></li>
             <li id="help"><a href=""><b>帮助</b></a></li>
             <li id="none"><a><b></b></a></li>

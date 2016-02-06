@@ -10,6 +10,8 @@ use yii\widgets\ActiveForm;
 
 <script src="../assets/editor/ckeditor/ckeditor.js" type="text/javascript"></script>
 <script src="../assets/editor/laydate/laydate.js" type="text/javascript"></script>
+<script src="<?= Yii::$app->homeUrl ?>../assets/editor/laydate/laydate.js" type="text/javascript"></script>
+<script src="<?= Yii::$app->homeUrl ?>../assets/editor/ckeditor/ckeditor.js" type="text/javascript"></script>
 
 <p class="note">带有 <span class="required">*</span> 为必填.</p>
 

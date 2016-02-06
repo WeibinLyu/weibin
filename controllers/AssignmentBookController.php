@@ -52,6 +52,14 @@ class AssignmentBookController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+    
+    public function actionViewpdf()
+    {
+        $id = 1;
+        return $this->render('viewpdf', [
+            'model' => $this->findModel($id),
+        ]);
+    }
 
     /**
      * Creates a new AssignmentBook model.

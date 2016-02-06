@@ -1,0 +1,100 @@
+<html>
+<body>
+
+<h1>后台</h1>
+
+<b>简单表格</b>
+<table border="1" cellspacing="0" cellpadding="10">
+<tr>
+	<td>row 1, cell 1</td>
+	<td>row 1, cell 2</td>
+</tr>
+<tr>
+	<td>row 2, cell 1</td>
+	<td>row 2, cell 2</td>
+</tr>
+</table>
+
+<b>跨越单元格：</b>
+<table border="1">
+<tr>
+	<th>AA</th>
+	<th colspan="2">BB</th>
+</tr>
+	<th>CC</th>
+	<td>44444</td>
+	<td>44444</td>
+</tr>
+<tr>
+	<th rowspan="2">DD</th>
+	<td>55555</td>
+	<td>55555</td>
+</tr>
+<tr>
+	<td>66666</td>
+	<td>66666</td>
+</tr>
+</table>
+
+<h4>Disc 项目符号列表：</h4>
+<ul type="disc">   <! type="circle"  or  "square">
+	<li>苹果</li>
+	<li>香蕉</li>
+	<li>柠檬</li>
+	<li>桔子</li>
+</ul>  
+
+<div id="ddd">
+	<div style="width:160px; height:90px; border:3px solid red; background:yellow; float:left">
+		<button onclick="full()">full</button>
+		<p>123</p>
+	</div>
+
+	<div style="width:160px; height:90px; border:3px solid blue; background:green; float:left">
+		<p>123</p>
+	</div>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+	element = document.getElementById("ddd");
+  	function launchFullScreen(element) 
+  	{
+	    if(element.requestFullScreen) 
+	    {
+	      element.requestFullScreen();
+	    } 
+	    else if(element.mozRequestFullScreen) 
+	    {
+	      element.mozRequestFullScreen();
+	    } 
+	    else if(element.webkitRequestFullScreen)
+	    {
+	      element.webkitRequestFullScreen();
+	    } 
+	    else if(element.msRequestFullScreen) 
+	    {
+	      element.msRequestFullScreen();
+	    }
+	    else
+	    {
+	      return true;
+	    }
+  	}
+  	function cancelFullScreen() {
+    if(document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if(document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if(document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen();
+    } else if(document.msExitFullscreen) {
+      document.msExitFullscreen();
+    }else{
+      return true;
+    }
+  }
+</script>
