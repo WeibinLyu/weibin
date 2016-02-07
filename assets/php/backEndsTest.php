@@ -34,13 +34,13 @@
 
     if (isset($_POST['replace'])) {
             replaceTex($pathOfTemplate, "1300333331");
-            echo "<a href='/DocAuto/documents/$studentId/$tableName/$tableName.tex'>查看 tex 文件</a>";
+            echo "<a href='/weibin-github/assets/documents/$studentId/$tableName/$tableName.tex'>查看 tex 文件</a>";
     }
     if (isset($_POST['generate'])) {
             if (toPdf($path) == 0) {
-                    echo "<a href='/DocAuto/documents/$studentId/$tableName/$tableName.pdf'>查看 pdf 文件</a>";
+                    echo "<a href='/weibin-github/assets/documents/$studentId/$tableName/$tableName.pdf'>查看 pdf 文件</a>";
             } else {
-                    echo "<a href='/DocAuto/documents/$studentId/$tableName/$tableName.log'>查看 log 文件</a>";
+                    echo "<a href='/weibin-github/assets/documents/$studentId/$tableName/$tableName.log'>查看 log 文件</a>";
             }
     }
 ?>

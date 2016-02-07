@@ -78,6 +78,25 @@ class AssignmentBookController extends Controller
             ]);
         }
     }
+    
+    public function actionCreatepdf()
+    {
+        $id = 1;
+        $model = $this->findModel($id);
+        // var_dump($model->userRelation->studentId);exit;
+        require_once dirname(dirname(__FILE__)).'/assets/php/backEnds.php';
+
+        $model->route = dirname(dirname(__FILE__)).backEndsTest('assignmentBook', 1300333331);
+        if ($model->route != "false")
+        {
+//            var_dump($model->route);exit;
+            $model->pdfExist = 1;
+            $model->save();
+            //echo "<script language=javascript>alert('生成pdf成功！');</script>";
+            $this->redirect(array('viewpdf'));
+
+        }
+    }
 
     /**
      * Updates an existing AssignmentBook model.
