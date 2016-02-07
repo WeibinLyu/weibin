@@ -1,0 +1,64 @@
+\documentclass[a4paper]{article}
+
+\usepackage[adobefonts]{ctex}
+
+\usepackage{multirow}
+\usepackage{pbox}
+\usepackage{graphicx}
+
+\begin{document}
+
+\newsavebox\tableBox
+\sbox\tableBox{
+    \begin{tabular}{|p{6em}|c|p{4em}|c|p{4em}|c|p{4em}|c|p{4em}|c|p{4em}|}
+    \hline
+    题目类型 & \pbox{2em}{工程\\设计} & & \pbox{2em}{工程\\技术} & & \pbox{2em}{实验\\研究} & & \pbox{2em}{软件\\开发} & & \pbox{2em}{理论\\研究} & \\ \hline
+    \end{tabular}
+}
+
+\begin{center}
+    \resizebox{\textwidth}{!}{
+    %\begin{tabular}{|c|p{2em}|p{2em}|p{2em}|p{2em}|p{2em}|p{2em}|p{2em}|p{2em}|p{2em}|}
+    \begin{tabular}{|c|c|p{4em}|c|p{4em}|c|p{4em}|c|p{4em}|c|p{4em}|}
+    \hline
+    题目名称 & \multicolumn{10}{|c|}{}\\
+    \hline
+    题目类型 & \pbox{2em}{工程\\设计} & & \pbox{2em}{工程\\技术} & & \pbox{2em}{实验\\研究} & & \pbox{2em}{软件\\开发} & & \pbox{2em}{理论\\研究} & \\
+    \hline 
+    题目难度 & A &  & B & & \multicolumn{4}{|c|}{上机时数} & \multicolumn{2}{|c|}{}\\
+    \hline
+    \multirow{5}{6em}{题目来源于科研课题(该课题情况)} & 课题 & \multicolumn{3}{|c|}{} & 横向 & \multicolumn{2}{|c|}{} & 纵向 & \multicolumn{2}{|c|}{} \\ \cline{2-11}
+    & \multicolumn{2}{|l|}{课题名称} & \multicolumn{8}{|c|}{} \\ \cline{2-11}
+    & \multicolumn{2}{|l|}{课题来源}  & \multicolumn{8}{|c|}{} \\ \cline{2-11}
+    & \multicolumn{2}{|l|}{教学、实验改革} & \multicolumn{8}{|c|}{} \\ \cline{2-11}
+    & \multicolumn{2}{|l|}{其他} & \multicolumn{8}{|c|}{} \\ \hline
+    \multicolumn{11}{|c|}{主要任务与要求} \\ \hline
+    %\multirow{4}{*}{\multicolumn{11}{|l|}{任务：}} \\
+    \multicolumn{11}{|l|}{\multirow{1}{\wd\tableBox}{\pbox{\wd\tableBox}{\vspace{1ex}任务：拉斯克奖的疯了卡死就对方了卡司机的楼房撒酒疯看了姐阿三冷风机萨拉的疯狂拉斯可大家分了看撒旦教富利卡撒娇了打开放假萨拉卡积分拉斯克奖的疯了卡司机的离开法计算的快乐放假拉开速度加分绿卡速度加拉斯卡电费交绿色卡积分打算大发速度，放假 。萨菲隆撒娇的开发了司法局阿斯柯达了放假拉开速度加飞飞}}} \\
+    \multicolumn{11}{|l|}{} \\
+    \multicolumn{11}{|l|}{} \\
+    \multicolumn{11}{|l|}{} \\ \hline
+    \multicolumn{11}{|l|}{\multirow{1}{\textwidth}{要求：}} \\
+    \multicolumn{11}{|l|}{} \\
+    \multicolumn{11}{|l|}{} \\
+    \multicolumn{11}{|l|}{} \\ \hline
+    \multicolumn{11}{|l|}{\multirow{1}{360pt}{需掌握的基础知识：}} \\
+    \multicolumn{11}{|l|}{} \\ \hline
+    \multicolumn{11}{|l|}{需借阅的参考文献（不少于10本，其中外文参考文献至少1本）}\\ \hline
+    \multicolumn{11}{|l|}{1.}\\ \hline
+    \multicolumn{11}{|l|}{2.}\\ \hline
+    \multicolumn{11}{|l|}{3.}\\ \hline
+    \multicolumn{11}{|l|}{4.}\\ \hline
+    \multicolumn{11}{|l|}{5.}\\ \hline
+    \multicolumn{11}{|l|}{6.}\\ \hline
+    \multicolumn{11}{|l|}{7.}\\ \hline
+    \multicolumn{11}{|l|}{8.}\\ \hline
+    \multicolumn{11}{|l|}{9.}\\ \hline
+    \multicolumn{11}{|l|}{10.}\\ \hline
+    \multicolumn{11}{|l|}{\multirow{1}{360pt}{所需设备：}} \\
+    \multicolumn{11}{|l|}{} \\ \hline
+    选题者 & \multicolumn{2}{|c|}{} & \multicolumn{2}{|c|}{班级学号} & \multicolumn{6}{|c|}{} \\ \hline
+    \end{tabular}
+}
+\end{center}
+\end{document}

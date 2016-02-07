@@ -1,0 +1,1 @@
+/home/weibin/Project/docAuto/documents/template/template.cls

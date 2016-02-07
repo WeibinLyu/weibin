@@ -1,0 +1,105 @@
+\documentclass{template}
+
+% 正文
+\begin{document}
+
+\guetLogo{../../guet.jpg}
+
+% 文档名称
+\documentName{毕业设计（论文）任务书}
+
+\vfill
+
+% 课题、姓名、学号等信息
+\begin{quote}
+\centering
+    \subject{!subjectName-!}
+    \academy{!studentAcademy-!}
+    \major{!studentProfessional-!}
+    \studentName{!realName-!}
+    \studentId{!studentId-!}
+    \teacherAcademy{!teacherWorkAddress-!}
+    \teacherName{!teacherName-!}
+    \teacherJob{!teacherProfessionalTitle-!}
+\end{quote}
+
+\vfill
+
+% 题目类型
+\begin{center}
+题目类型：\block{理论研究}\block{实验研究}\block{工程设计}\block{工程技术研究}\block{软件开发}\\[2em]
+\large{!date-!}
+\end{center}
+
+\newpage
+
+% 正文
+\section{毕业设计（论文）的内容}
+!paperContent-!
+
+\section{毕业设计（论文）的要求与数据}
+!paperRequireAndData-!
+
+\section{毕业设计（论文）应完成的工作}
+!paperPreliminaryWork-!
+
+\section{应收集的资料及主要参考文献}
+!referenceDocumentation-!
+
+\section{试验、测试、试制加工所需主要仪器设备}
+!equipment-!
+
+\newpage
+
+% 时间、单位及意见
+\section*{任务下达时间：}
+\rightline{!taskAssignmentDate-!}
+
+\vfill
+
+\section*{毕业设计开始与完成时间：}
+\rightline{!taskStartData-!至 !-!}
+
+\vfill
+
+\section*{组织实施单位：}
+\rightline{!enterpriseOrGoup-!}
+
+\vfill
+
+\section*{教研室主任意见：}
+!chiefOpnion-!
+\vspace{4em}
+\rightline{签字\hspace{8em} 年\qquad 月\qquad 日}
+
+\vfill
+
+\section*{学院领导小组意见：}
+!acadmyGroupnion-!
+\vspace{4em}
+\rightline{签字\hspace{8em} 年\qquad 月\qquad 日}
+
+\newpage
+
+% 进度计划表
+\setcellgapes{3pt}
+\newsavebox{\mybox}
+\begin{center}
+\resizebox{\textwidth}{!}{
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \thead{序号} & \thead{起止日期} & \thead{计划完成内容} & \thead{实际完成内容} & \thead{检查日期\\ 检查人签名} \\ \hline
+    1 &  &  &  &  \\ \hline
+    2 & & & & \\ \hline
+    3 & & & & \\ \hline
+    4 & & & & \\ \hline
+    5 & & & & \\ \hline
+    6 & & & & \\ \hline
+    7 & & & & \\ \hline
+    \multicolumn{5}{|m{\textwidth}<{\centering}|}{指导教师批准日期\hspace{8em} 签名：\hspace{4em}} \\ 
+    \hline
+    \end{tabular}
+}
+\end{center}
+
+\end{document}
