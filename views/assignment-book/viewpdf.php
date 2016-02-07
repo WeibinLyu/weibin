@@ -7,6 +7,6 @@ $this->title = 'pdf文件预览';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<iframe src="<?= yii::$app->homeUrl ?>../assets/PDFJSInNet/web/viewer.html?file=<?= yii::$app->homeUrl.$model->route; ?>"
+<iframe src="<?= yii::$app->homeUrl ?>PDFJSInNet/web/viewer.html?file=<?= yii::$app->homeUrl.$model->route; ?>"
             id="viewpdf" name="myframe" width="70%" height="1000">
     </iframe>
