@@ -24,11 +24,10 @@
 		并把生成的 pdf文件的路径存到数据库。pdf文件的路径是由backEndsTest($templatName, $studentID)
 		成功生成 pdf文件后返回的</pre>
  
-###数据库
+###其它
 <pre>db.sql： 数据库备份
-createView.sql： 创建用户所有相关信息的视图</pre>
- 
-###assets/：资源文件备份
+createView.sql： 创建用户所有相关信息的视图
+assets/：资源文件备份</pre>
 
 ###以下均为yii配置文件：
 <pre>config/
