@@ -43,9 +43,9 @@ class AssignmentBook extends \yii\db\ActiveRecord
     {
         return [
             [['chooserId', 'subjectId', 'topicType', 'date', 'paperContent', 'paperRequireAndData', 'paperPreliminaryWork', 'referenceDocumentation', 'equipment', 'taskAssignmentDate', 'taskStartData', 'enterpriseOrGoup'], 'required'],
-            [['chooserId', 'subjectId'], 'integer'],
+            [['chooserId', 'subjectId', 'pdfExist'], 'integer'],
             [['date', 'taskAssignmentDate', 'taskStartData', 'taskEndData'], 'safe'],
-            [['paperContent', 'paperRequireAndData', 'paperPreliminaryWork', 'referenceDocumentation', 'equipment', 'chiefOpnion', 'acadmyGroupOpnion', 'pdfExist'], 'string'],
+            [['paperContent', 'paperRequireAndData', 'paperPreliminaryWork', 'referenceDocumentation', 'equipment', 'chiefOpnion', 'acadmyGroupOpnion'], 'string'],
             [['topicType', 'enterpriseOrGoup'], 'string', 'max' => 50],
             [['route'], 'string', 'max' => 200]
         ];

@@ -92,9 +92,9 @@ class AssignmentBookController extends Controller
             //var_dump($model->route);exit;
             $model->pdfExist = 1;
             $model->save();
+            //$eer = $model->errors;
             //echo "<script language=javascript>alert('生成pdf成功！');</script>";
             $this->redirect(array('viewpdf'));
-
         }
     }
 

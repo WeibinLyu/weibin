@@ -36,7 +36,7 @@ function backEndsTest($tableName, $studentId)
 
     if (toPdf($path) == 0) {
         echo "<a target='_blank' href='/weibin-github/web/assets/documents/$stuId/$tableName/$tableName.pdf'>查看 pdf</a>";
-        return "assets/documents/$stuId/$tableName/$tableName.pdf";
+        return "documents/$stuId/$tableName/$tableName.pdf";
     } else {
         return "false";
     }
