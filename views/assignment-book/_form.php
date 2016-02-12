@@ -19,13 +19,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'chooserId')->textInput() ?>
-
     <?= $form->field($model, 'subjectId')->textInput() ?>
 
     <?= $form->field($model, 'topicType')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date')->textInput(['onclick' => 'laydate()','size'=>'5','class'=>'laydate-icon']) ?>
+    <?= $form->field($model, 'date')->textInput(['onclick' => 'laydate()','size'=>'5','class'=>'laydate-icon','style'=>'width:130px']) ?>
 
     <?= $form->field($model, 'paperContent')->textarea(['rows' => 6, 'class' => 'ckeditor']) ?>
 
@@ -37,11 +35,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'equipment')->textarea(['rows' => 6, 'class' => 'ckeditor']) ?>
 
-    <?= $form->field($model, 'taskAssignmentDate')->textInput() ?>
+    <?= $form->field($model, 'taskAssignmentDate')->textInput(['onclick' => 'laydate()','size'=>'5','class'=>'laydate-icon','style'=>'width:130px']) ?>
 
-    <?= $form->field($model, 'taskStartData')->textInput() ?>
+    <?= $form->field($model, 'taskStartData')->textInput(['onclick' => 'laydate()','size'=>'5','class'=>'laydate-icon','style'=>'width:130px']) ?>
 
-    <?= $form->field($model, 'taskEndData')->textInput() ?>
+    <?= $form->field($model, 'taskEndData')->textInput(['onclick' => 'laydate()','size'=>'5','class'=>'laydate-icon','style'=>'width:130px']) ?>
 
     <?= $form->field($model, 'enterpriseOrGoup')->textInput(['maxlength' => true]) ?>
 
@@ -49,12 +47,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'acadmyGroupOpnion')->textarea(['rows' => 6, 'class' => 'ckeditor']) ?>
 
-    <?= $form->field($model, 'pdfExist')->dropDownList([ '0', '1', ], ['prompt' => '']) ?>
-
-    <?= $form->field($model, 'route')->textInput(['maxlength' => true]) ?>
-
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', '确定创建') : Yii::t('app', '确定修改'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

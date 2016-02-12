@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\AssignmentBook */
 
-$this->title = Yii::t('app', 'Create Assignment Book');
+$this->title = '创建任务书';
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Assignment Books'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

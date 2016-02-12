@@ -46,19 +46,52 @@ class AssignmentBookController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionView($id)
+    public function actionView()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        if(\Yii::$app->user->isGuest == null)
+        {
+            $chooserid = \Yii::$app->user->identity->id;
+            $stuid = \Yii::$app->user->identity->studentId;;
+            $model = $this->findAssignmentBook($chooserid);
+            
+            if($model != null)
+            {
+                return $this->render('view', ['model' => $model,]);
+            }
+            else
+            {
+                $this->redirect("index.php?r=assignment-book/create");
+            }
+        }
+        else 
+        {
+            $this->redirect("index.php?r=site/login");
+        }
     }
     
     public function actionViewpdf()
     {
-        $id = 1;
-        return $this->render('viewpdf', [
-            'model' => $this->findModel($id),
-        ]);
+        if(\Yii::$app->user->isGuest == null)
+        {
+            $chooserid = \Yii::$app->user->identity->id;
+            $stuid = \Yii::$app->user->identity->studentId;;
+            $model = $this->findAssignmentBook($chooserid);
+            
+            if($model != null)
+            {
+                return $this->render('viewpdf', [
+                    'model' => $model,
+                ]);
+            }
+            else
+            {
+                $this->redirect("index.php?r=assignment-book/create");
+            }
+        }
+        else 
+        {
+            $this->redirect("index.php?r=site/login");
+        }
     }
 
     /**
@@ -68,33 +101,52 @@ class AssignmentBookController extends Controller
      */
     public function actionCreate()
     {
-        $model = new AssignmentBook();
+        if(\Yii::$app->user->isGuest == null)
+        {
+            $model = new AssignmentBook();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            if ($model->load(Yii::$app->request->post())) 
+            {
+                $model->chooserId = \Yii::$app->user->identity->id;
+                if($model->save())
+                    return $this->redirect(['view', 'id' => $model->id]);
+            } 
+            else 
+            {
+                return $this->render('create', ['model' => $model,]);
+            }
+        }
+        else
+        {
+            $this->redirect("index.php?r=site/login");
         }
     }
     
     public function actionCreatepdf()
     {
-        $id = 1;
-        $model = $this->findModel($id);
-        // var_dump($model->userRelation->studentId);exit;
-        require_once dirname(dirname(__FILE__)).'/web/php/backEnds.php';
-
-        $model->route = backEndsTest('assignmentBook', 1300333331);
-        if ($model->route != "false")
+        if(\Yii::$app->user->isGuest == null)
         {
-            //var_dump($model->route);exit;
-            $model->pdfExist = 1;
-            $model->save();
-            //$eer = $model->errors;
-            //echo "<script language=javascript>alert('生成pdf成功！');</script>";
-            $this->redirect(array('viewpdf'));
+            $chooserid = \Yii::$app->user->identity->id;
+            $stuid = \Yii::$app->user->identity->studentId;;
+            $model = $this->findAssignmentBook($chooserid);
+            if($model == null)
+            {
+                $this->redirect("index.php?r=assignment-book/create");
+                return;
+            }
+            require_once dirname(dirname(__FILE__)).'/web/php/backEnds.php';
+            $model->route = backEndsTest('assignmentBook', $stuid);
+            if ($model->route != "false")
+            {
+                $model->pdfExist = 1;
+                $model->save();
+                //$eer = $model->errors;
+                $this->redirect(array('viewpdf'));
+            }
+        }
+        else
+        {
+            $this->redirect("index.php?r=site/login");
         }
     }
 
@@ -104,16 +156,30 @@ class AssignmentBookController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionUpdate()
     {
-        $model = $this->findModel($id);
+        if(\Yii::$app->user->isGuest == null)
+        {
+            $chooserid = \Yii::$app->user->identity->id;
+            $stuid = \Yii::$app->user->identity->studentId;;
+            $model = $this->findAssignmentBook($chooserid);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            if ($model->load(Yii::$app->request->post())) 
+            {
+                $model->chooserId = \Yii::$app->user->identity->id;
+                if($model->save())
+                {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                }
+            } 
+            else 
+            {
+                return $this->render('create', ['model' => $model,]);
+            }
+        }
+        else
+        {
+            $this->redirect("index.php?r=site/login");
         }
     }
 
@@ -140,6 +206,15 @@ class AssignmentBookController extends Controller
     protected function findModel($id)
     {
         if (($model = AssignmentBook::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+    
+    protected function findAssignmentBook($chooserid)
+    {
+        if (($model = AssignmentBook::find()->where(['chooserId' => $chooserid])->one()) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

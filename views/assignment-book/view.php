@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <a href="<?= Yii::$app->homeUrl ?>index.php?r=assignment-book/createpdf" class="btn btn-success">生成PDF文件</a>
-        <?= Html::a(Yii::t('app', '修改'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', '修改'), ['update'], ['class' => 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('app', '删除'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
